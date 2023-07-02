@@ -1,4 +1,4 @@
-# ドメインを独立させる Isolating the Domain
+# ドメインを独立させる
 
 - Spring Boot
 - Spring MVC (direct field access)
