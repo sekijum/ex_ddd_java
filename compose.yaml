@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  java:
+    build:
+      context: .
+      dockerfile: docker/java/Dockerfile
+    ports:
+      - '8080:8080'
+    tty: true
+    init: true
+    privileged: true
+    volumes:
+      - ./:/var/www:cached
+    networks:
+      net1:
+        ipv4_address: 192.168.10.10
+networks:
+  net1:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.10.0/24

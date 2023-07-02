@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="example.infrastructure.datasource.member.MemberMapper">
+
+    <sql id="selectMember">
+        SELECT
+        member.member_Id as "memberNumber.value",
+        member.created_at as "createdAt.value",
+        FROM todo.member as member
+        INNER JOIN todo.member_profiles as member_profiles on (
+        member.member_profile_id = member_profiles.member_profile_id
+        )
+    </sql>
+
+    <select id="selectByMemberNumber" resultType="example.domain.model.member.Member">
+        <include refid="selectMember"/>
+        WHERE member.member_Id = #{memberNumber.value}
+    </select>
+</mapper>
