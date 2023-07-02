@@ -1,5 +1,6 @@
 SHELL=/bin/bash
 
+REPOSITORY := https://github.com/sekijum/isolating-the-domain.git
 COMPOSE_FILE = compose.yaml
 
 .PHONY: init
@@ -13,4 +14,4 @@ clean:
 
 .PHONY: bash
 bash:
-	docker-compose -f $(COMPOSE_FILE) run --rm --service-ports -ti java /bin/bash --login
+	docker-compose -f $(COMPOSE_FILE) run --rm --service-ports -ti api /bin/bash --login

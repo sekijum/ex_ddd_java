@@ -1,14 +1,15 @@
 version: '3.8'
 services:
-  java:
+  api:
     build:
       context: .
-      dockerfile: docker/java/Dockerfile
+      dockerfile: docker/api/Dockerfile
     ports:
       - '8080:8080'
     tty: true
     init: true
     privileged: true
+    platform: linux/x86_64
     volumes:
       - ./:/var/www:cached
     networks:

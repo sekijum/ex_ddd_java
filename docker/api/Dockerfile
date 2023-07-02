@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 amazoncorretto:17
+FROM amazoncorretto:17
 
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
