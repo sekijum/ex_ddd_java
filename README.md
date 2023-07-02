@@ -10,7 +10,7 @@
 make init
 ```
 
-### bash
+## bash
 
 ```
 make bash
