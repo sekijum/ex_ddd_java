@@ -31,8 +31,6 @@ java -jar webapp/build/libs/webapp.jar
 
 ## 設計ガイド
 
-[ドメインを独立させる](https://github.com/system-sekkei/isolating-the-domain/wiki)
-
 [ドメイン駆動設計本格入門](https://www.slideshare.net/masuda220/ss-137608652)
 
 [型指向のプログラミング：設計ガイドライン](https://github.com/masuda220/business-logic-patterns/wiki/%E8%A8%AD%E8%A8%88%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3)
