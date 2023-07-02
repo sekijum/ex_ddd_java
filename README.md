@@ -1,7 +1,20 @@
 # ドメインを独立させる Isolating the Domain
+
 - Spring Boot
 - Spring MVC (direct field access)
 - MyBatis SQL Mapper
+
+## 初期設定
+
+```sh
+make init
+```
+
+### bash
+
+```
+make bash
+```
 
 ## 起動方法
 
@@ -9,7 +22,7 @@
 ./gradlew bootRun
 ```
 
-## 実行可能Jarのビルドと実行
+## 実行可能 Jar のビルドと実行
 
 ```sh
 ./gradlew clean build
