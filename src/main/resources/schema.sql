@@ -1,18 +1,20 @@
-DROP SCHEMA IF EXISTS todo CASCADE;
-CREATE SCHEMA todo;
+DROP SCHEMA IF EXISTS example CASCADE;
 
-CREATE TABLE todo.members (
-  member_Id  INTEGER PRIMARY KEY,
-  name VARCHAR(40) NOT NULL,
-  mail_address VARCHAR(255) NOT NULL,
+CREATE SCHEMA example;
+
+CREATE TABLE example.members (
+  id INTEGER PRIMARY KEY UNIQUE,
+  full_name VARCHAR(40) NOT NULL,
+  mail_address VARCHAR(255) NOT NULL UNIQUE,
   phone_number VARCHAR(13) NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE SEQUENCE todo.member_Id;
 
-CREATE TABLE todo.member_profiles (
-  member_profile_id  INTEGER PRIMARY KEY,
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (member_profile_id) REFERENCES todo.members(member_Id)
+CREATE SEQUENCE example.member_Id;
+
+CREATE TABLE example.member_settings (
+  member_id INTEGER NOT NULL UNIQUE,
+  theme VARCHAR(30) NOT NULL,
+  autologin BOOLEAN NOT NULL
+    ,FOREIGN KEY (member_id) REFERENCES example.members(id)
 );
-CREATE SEQUENCE todo.member_profile_id;

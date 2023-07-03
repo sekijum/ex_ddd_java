@@ -6,16 +6,19 @@
 
     <sql id="selectMember">
         SELECT
-        member.member_Id as "memberNumber.value",
-        member.created_at as "createdAt.value",
-        FROM todo.member as member
-        INNER JOIN todo.member_profiles as member_profiles on (
-        member.member_profile_id = member_profiles.member_profile_id
+        members.id as "memberNumber.value",
+        members.full_name as "fullName.value",
+        members.mail_address as "mailAddress.value",
+        members.phone_number as "phoneNumber.value",
+        members.created_at as "createdAt.value",
+        FROM example.members as members
+        INNER JOIN example.member_settings as member_settings on (
+        members.id = member_settings.member_id
         )
     </sql>
 
     <select id="selectByMemberNumber" resultType="example.domain.model.member.Member">
         <include refid="selectMember"/>
-        WHERE member.member_Id = #{memberNumber.value}
+        WHERE members.id = #{memberNumber.value}
     </select>
 </mapper>

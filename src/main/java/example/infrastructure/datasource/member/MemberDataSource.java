@@ -12,4 +12,8 @@ public class MemberDataSource implements MemberRepository {
     public Member choose(MemberNumber memberNumber) {
         return mapper.selectByMemberNumber(memberNumber);
     }
+
+    public MemberDataSource(MemberMapper mapper) {
+        this.mapper = mapper;
+    }
 }

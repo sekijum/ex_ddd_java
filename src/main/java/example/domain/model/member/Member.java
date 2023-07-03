@@ -1,23 +1,25 @@
 package example.domain.model.member;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * メンバー
  */
 public class Member {
-    MemberNumber memberNumber;
     Member member;
-    Name name;
-    MailAddress mailAddress;
-    PhoneNumber phoneNumber;
+    @JsonProperty("memberNumber")  MemberNumber memberNumber;
+    @JsonProperty("fullName") FullName fullName;
+    @JsonProperty("mailAddress") MailAddress mailAddress;
+    @JsonProperty("phoneNumber") PhoneNumber phoneNumber;
 
     @Deprecated
     public Member() {
-        this(new MemberNumber(), new Name(), new MailAddress(), new PhoneNumber());
+        this(new MemberNumber(), new FullName(), new MailAddress(), new PhoneNumber());
     }
 
-    public Member(MemberNumber memberNumber, Name name, MailAddress mailAddress, PhoneNumber phoneNumber) {
+    public Member(MemberNumber memberNumber, FullName fullName, MailAddress mailAddress, PhoneNumber phoneNumber) {
         this.memberNumber = memberNumber;
-        this.name = name;
+        this.fullName = fullName;
         this.mailAddress = mailAddress;
         this.phoneNumber = phoneNumber;
     }
@@ -26,8 +28,8 @@ public class Member {
         return memberNumber;
     }
 
-    public Name name() {
-        return name;
+    public FullName fullName() {
+        return fullName;
     }
 
     public MailAddress mailAddress() {
@@ -40,9 +42,9 @@ public class Member {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "employeeNumber=" + memberNumber +
-                ", name=" + name +
+        return "member{" +
+                "memberNumber=" + memberNumber +
+                ", fullName=" + fullName +
                 ", phoneNumber=" + phoneNumber +
                 ", mailAddress=" + mailAddress +
                 '}';

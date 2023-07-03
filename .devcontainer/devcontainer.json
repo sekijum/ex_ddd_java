@@ -1,7 +1,7 @@
 {
   "name": "isolating-the-domain",
   "dockerComposeFile": "../compose.yaml",
-  "service": "java",
+  "service": "api",
   "workspaceFolder": "/var/www",
   "extensions": ["vscjava.vscode-java-pack", "vmware.vscode-boot-dev-pack"],
   "remoteUser": "root"
