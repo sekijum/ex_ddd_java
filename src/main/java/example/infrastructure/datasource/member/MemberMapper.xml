@@ -11,8 +11,10 @@
         members.mail_address as "mailAddress.value",
         members.phone_number as "phoneNumber.value",
         members.created_at as "createdAt.value",
-        FROM example.members as members
-        INNER JOIN example.member_settings as member_settings on (
+        FROM
+        example.members as members
+        INNER JOIN
+        example.member_settings as member_settings on (
         members.id = member_settings.member_id
         )
     </sql>

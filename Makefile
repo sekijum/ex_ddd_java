@@ -15,3 +15,11 @@ clean:
 .PHONY: bash
 bash:
 	docker-compose -f $(COMPOSE_FILE) run --rm --service-ports -ti api /bin/bash --login
+
+.PHONY: dev
+dev:
+	docker-compose -f $(COMPOSE_FILE) run --rm --service-ports -ti api ./gradlew bootRun
+
+.PHONY: build
+build:
+	docker-compose -f $(COMPOSE_FILE) run --rm --service-ports -ti api ./gradlew build
