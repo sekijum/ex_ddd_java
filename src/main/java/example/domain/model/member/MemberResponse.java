@@ -22,10 +22,10 @@ public class MemberResponse {
 
     public static MemberResponse convert(Member member) {
         return MemberResponse.builder()
-                .memberNumber(member.getMemberNumber().getValue())
-                .fullName(member.getFullName().getValue())
-                .mailAddress(member.getMailAddress().getValue())
-                .phoneNumber(member.getPhoneNumber().getValue())
+                .memberNumber(member.memberNumber().value())
+                .fullName(member.fullName().value())
+                .mailAddress(member.mailAddress().value())
+                .phoneNumber(member.phoneNumber().value())
                 .build();
     }
 }

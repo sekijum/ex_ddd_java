@@ -22,7 +22,6 @@ public class MemberController {
     @GetMapping()
     public ResponseEntity<MemberResponse> member(@PathVariable(value = "memberNumber") MemberNumber memberNumber) {
         val member = memberQueryService.choose(memberNumber);
-        System.out.println(member.getFullName());
         return ResponseEntity.ok(MemberResponse.convert(member));
     }
 }

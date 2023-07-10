@@ -6,11 +6,13 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * 氏名
  */
 @Data
+@Accessors(fluent = true)
 @NoArgsConstructor
 @AllArgsConstructor
 public class FullName {
